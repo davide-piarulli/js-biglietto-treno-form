@@ -9,6 +9,4 @@ const inputfullname = document.querySelector('fullname');
 const inputkm = document.querySelector('km');
 
 console.log(inputfullname);
-console.log(inputkm);
-
 // BUTTONS
