@@ -17,33 +17,27 @@
   <div class="container my-5 ">
     <form action="#">
 
-      <label for="fullname" class="form-label">Nome Cognome</label>
-      <input type="text" id="fullname" class="inputfullname form-control" placeholder="Scrivi Nome e Cognome">
-
-      <label for="km" class="form-label">Km da percorrere</label>
-      <input type="text" id="km" class="inputkm form-control" placeholder="Quanti km?">
-      
-      <label for="km" class="select-label">Fascia d'età</label>
-      <select class="form-select" id="eta">
-        <option selected>Seleziona l'età</option>
+      <h1>biglietto treno form base</h1>
+      <h2 id="output"></h2>
+      <input type="text" id="name">
+      <input type="text" id="km">
+      <select name="fascia-eta" id="fascia-eta">
         <option value="minorenne">Minorenne</option>
-        <option value="maggiorenne">Maggiorenne</option>
-        <option value="senior">Senior - Over 65</option>
+        <option value="maggiorenne" selected>Maggiorenne</option>
+        <option value="over65">Senior - Over 65</option>
       </select>
-      <button class="generate btn btn-primary" type="submit">Genera</button>
-      <button class="reset btn btn-primary" type="reset">Annulla</button>
-    </form>
+      <button id="genera">Genera biglietto</button>
+      <button id="reset">Annulla</button>
 
-
-
+    
 
     <!-- mettere classe d-none  -->
-    <div class="ticket  "> 
-      <h2 class="fullname">Nome passeggero: </h2>
-      <h3 class="offer">Offerta: </h3>
-      <h3 class="wagon">Carrozza: </h3>
-      <h3 class="bookingID">Codice CP: </h3>
-      <h3 class="ticketprice">Costo biglietto: </h3>
+    <div id="ticket " class=""> 
+      <h2 id="fullname">Nome passeggero: </h2>
+      <h3 id="offer">Offerta: </h3>
+      <h3 id="wagon">Carrozza: </h3>
+      <h3 id="bookingID">Codice CP: </h3>
+      <h3 id="ticketfinal">Costo biglietto: </h3>
     </div>
 
 

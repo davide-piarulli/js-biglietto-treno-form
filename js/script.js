@@ -1,29 +1,69 @@
 // ELEMENTS
 
-const priceKm = 0.21 ;
+const priceXKm = 0.21 ;
+const discountYoung = 20;
+const discountSenior = 40;
 const ticket = document.querySelector('.ticket');
 
 
-// INPUT
-const inputfullname = document.querySelector('.inputfullname');
-const inputkm = document.querySelector('.inputkm');
-
 // BUTTONS
-const generate = document.querySelector('.generate');
-const reset = document.querySelector('.reset');
+const btnGenera = document.getElementById('genera');
+const btnReset = document.getElementById('reset');
 
 
-generate.addEventListener('click', function(){
-  // ticket.classList.toggle('d-block'); NON FUNZIONA
-  const name = inputfullname.value;
-  document.querySelector('.ticket .fullname').innerHTML += name;
-  // inserire offerta in base al select
+// inizio di tutte le funzioni con il click genera
+btnGenera.addEventListener('click', function(){
+
+    // salvo i dati di partenza
+    const nome = document.getElementById('name').value; // assegno il valore dell'input name alla nuova variabile nome.
+    const km = parseInt(document.getElementById('km').value);
+    const age = document.getElementById('fascia-eta').value;
+    
+    const prezzo = km * priceXKm;
+    let prezzoFinale = prezzo;
+    let tipoBiglietto = 'Biglietto Standard';
   
-  // generare numero random carrozza
-  const wagonrandom = Math.floor(Math.random() * 11);
-  document.querySelector('.ticket .wagon').innerHTML += wagonrandom;
-  // generare numero random booking
-  const bookingNumber = Math.floor(Math.random() * 90000) + 10000;
-  document.querySelector('.ticket .bookingID').innerHTML += bookingNumber;
-  // calcolo costo biglietto
+    // calcolo il costo del biglietto
+    if(age === 'minorenne'){
+      prezzoFinale *= 1 - discountYoung/100;
+      tipoBiglietto = 'Sconto Minorenne';
+    }else if(age === 'over65'){
+      prezzoFinale *= 1 - discountSenior/100;
+      tipoBiglietto = 'Sconto Senior'
+    }
+    
+    console.log(nome, km, prezzo, prezzoFinale, tipoBiglietto);
+  
+    // stampo dati negli elementi HTML
+    // document.querySelector('.ticket .fullname').innerHTML += nome;
+    document.getElementById('fullname').innerHTML += nome;
+    document.getElementById('offer').innerHTML += tipoBiglietto;
+    document.getElementById('ticketfinal').innerHTML += prezzoFinale;
+  
+  
+    // generare numero random carrozza
+    const wagonrandom = Math.floor(Math.random() * 11);
+    document.querySelector('#wagon').innerHTML += wagonrandom;
+    console.log(wagonrandom);
+  
+    
+    // // generare numero random booking
+    const bookingNumber = Math.floor(Math.random() * 90000) + 10000;
+    document.querySelector('#bookingID').innerHTML += bookingNumber;
+    console.log(bookingNumber);
+
+  })
+
+    // document.getElementById('ticket').classList.remove('d-none');
+
+
+
+
+// reset function
+btnReset.addEventListener('click', function(){
+  document.getElementById('name').value = '';
+  document.getElementById('km').value = '';
+  document.getElementById('age').value = 'maggiorenne';
 })
+  
+
