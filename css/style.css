@@ -1,0 +1,43 @@
+body{
+  background-color: #902147;
+}
+
+#wrapper,
+#wrapper-biglietto {
+  background-color: white;
+  padding: 20px;
+  margin: 40px 0;
+  border-radius: 10px;
+}
+
+.dati{
+  height: 100px;
+  
+}
+
+.title{
+  margin: 20px 0 0;
+  color: #902147;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.dp-btn{
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #c5c5c5;
+  color: #902147;
+}
+
+th, td{
+  padding: 0 50px;
+  border: 1px solid grey;
+  text-align: center;
+}

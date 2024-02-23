@@ -31,11 +31,8 @@ btnGenera.addEventListener('click', function(){
       prezzoFinale *= 1 - discountSenior/100;
       tipoBiglietto = 'Sconto Senior'
     }
-    
-    console.log(nome, km, prezzo, prezzoFinale, tipoBiglietto);
-  
+      
     // stampo dati negli elementi HTML
-    // document.querySelector('.ticket .fullname').innerHTML += nome;
     document.getElementById('fullname').innerHTML += nome;
     document.getElementById('offer').innerHTML += tipoBiglietto;
     document.getElementById('ticketfinal').innerHTML += prezzoFinale;
@@ -44,26 +41,24 @@ btnGenera.addEventListener('click', function(){
     // generare numero random carrozza
     const wagonrandom = Math.floor(Math.random() * 11);
     document.querySelector('#wagon').innerHTML += wagonrandom;
-    console.log(wagonrandom);
   
     
     // // generare numero random booking
     const bookingNumber = Math.floor(Math.random() * 90000) + 10000;
     document.querySelector('#bookingID').innerHTML += bookingNumber;
-    console.log(bookingNumber);
 
+    document.getElementById('wrapper-biglietto').classList.remove('d-none');
   })
-
-    // document.getElementById('ticket').classList.remove('d-none');
-
-
-
-
-// reset function
-btnReset.addEventListener('click', function(){
-  document.getElementById('name').value = '';
-  document.getElementById('km').value = '';
-  document.getElementById('age').value = 'maggiorenne';
-})
+  
+  
+  // reset function
+  btnReset.addEventListener('click', function(){
+    document.getElementById('name').value = '';
+    document.getElementById('km').value = '';
+    document.getElementById('age').value = '';
+    
+    
+    document.getElementById('wrapper-biglietto').classList.add('d-none');
+  })
   
 
